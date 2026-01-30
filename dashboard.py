@@ -19,11 +19,16 @@ df = pd.DataFrame(response.data)
 
 if not df.empty:
     
-    df['price'] = pd.to_numeric(df['price']).fillna(0)
-    df['cost'] = pd.to_numeric(df['cost']).fillna(0)
+    #Garantindo que os campos numéricos estão no formato correto
+    df['preço de venda'] = pd.to_numeric(df['price']).fillna(0)
+    df['custo de produção'] = pd.to_numeric(df['cost']).fillna(0)
     
+    #Cálculo do lucro
     df['profit'] = df['price'] - df['cost']
     
+    st.title("Dashboard de Projetos - Karaberu")
+    st.markdown("Análise dos projetos cadastrados na plataforma Karaberu.")
+    st.title("")
     total_vendas = df[df['status'] == 'vendido']['price'].sum()
     total_lucro = df['profit'].sum()
 
@@ -46,7 +51,7 @@ if not df.empty:
     fig_comp = px.bar(
         df, 
         x='name', 
-        y=['price', 'cost'], 
+        y=['preço de venda', 'custo de produção'], 
         title='Preço vs Custo por Projeto',
         barmode='group' 
     )
