@@ -1,9 +1,9 @@
-import streamlit as st
+import streamlit as st # type: ignore
 import pandas as pd
 import numpy as np
-import plotly.express as px
-from supabase import create_client, Client
-from dotenv import load_dotenv
+import plotly.express as px# type: ignore
+from supabase import create_client, Client# type: ignore
+from dotenv import load_dotenv# type: ignore
 import os
 
 # Configuração da Página
