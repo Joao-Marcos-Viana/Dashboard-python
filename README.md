@@ -30,7 +30,7 @@ Uso de IA: Utilizei inteligência artificial de forma estratégica. Em vez de ap
 
 ---
 ### 🚀 Como rodar o projeto
-Clone o repositório.
+Clone o repositorio.
 
 Crie um ambiente virtual: python -m venv .venv
 
